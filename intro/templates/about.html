@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}
+About - Cheung Ho Yin
+{% endblock title %}
+{% block content %}
+
+<div class="row container" style="margin:auto">
+
+    <div class="col-md-6">
+        <h1>About Me</h1>
+        <p><b>Name(名前):</b> Cheung Ho Yin　 / 張　浩賢　/ チョウ　コウケン</p>
+        <p><b>Birthday(誕生日):</b> 7 August</p>
+        <p><b>Nationality(出身):</b> Hong Kong / 香港</p>
+        <p><b>Reasons to come to Japan / 日本に来た理由:</b><br>
+                1.香港は小さい過ぎ、広い世界を見たい<br>
+                2.香港にはどこでも日本商品を見えて、日本のことをもっと知りたい<br>
+                3.日本での交流や見学機会が多い<br>
+                4.日本のドラマ、ガチャガチャ、鉄道好き
+        </p>
+        <p><b>IT Skills:</b><br>
+            大学と自学で味わった：Java / C / C++ / C# / PHP / MySQL / Python<br>
+            仕事で使った：PHP / MySQL / VBA<br>
+            最近よく使う：Python Django / Bootstrap4<br>
+        </p>
+
+    </div>
+    <div id="demo" class="col-md-6 carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li style="background-color:grey" data-target="#demo" data-slide-to="0" class="active"></li>
+            <li style="background-color:grey" data-target="#demo" data-slide-to="1"></li>
+            <li style="background-color:grey" data-target="#demo" data-slide-to="2"></li>
+            <li style="background-color:grey" data-target="#demo" data-slide-to="3"></li>
+
+        </ul>
+
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/media/pic/honkongview.jpg" alt="Hong Kong Victory Harbour" width="1100" height="500">
+            </div>
+            <div class="carousel-item">
+              <img src="/media/pic/DSC_5827.JPG" alt="Kyoto Tower" width="1100" height="500">
+            </div>
+            <div class="carousel-item">
+              <img src="/media/pic/DSC_2559.JPG" alt="Taiwan Liberty Square" width="1100" height="500">
+            </div>
+              <div class="carousel-item">
+              <img src="/media/pic/DSC_1126.JPG" alt="Ginkaku Temple" width="1100" height="500">
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+
+    </div>
+</div>
+{% endblock content %}

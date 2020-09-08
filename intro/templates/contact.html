@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+Contact - Cheung Ho Yin
+{% endblock title %}
+{% block content %}
+{% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>{{message}}</strong>
+    </div>
+{% endfor %}
+<div class="row container" style="margin:auto">
+
+    <div class="col-md-6">
+        <h1>Contact and Enquiry</h1>
+        <form action="." method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="Submit" value="Submit">
+
+       </form>
+    </div>
+    <div class="col-md-6">
+        <h4>Address / 住所:</h4>
+        <p>〒601-8044 京都市南区東九条明田町10-2</p>
+        <h4>Email / メール:</h4>
+        <p>hkyinc@gmail.com</p>
+
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="500" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=%E3%80%92601-8044%20%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8D%97%E5%8C%BA%E6%9D%B1%E4%B9%9D%E6%9D%A1%E6%98%8E%E7%94%B0%E7%94%BA10-2&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/nordvpn-coupon/">nordvpn deals</a></div><style>.mapouter{position:relative;text-align:right;height:400px;width:500px;}.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:500px;}</style></div>
+    </div>
+</div>
+{% endblock %}

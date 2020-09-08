@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Poll Result / 結果</h3>
+            </div>
+
+            <div class="panel-body">
+                <h3>{{ poll.question }}</h3>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">{{poll.option_one}} &mdash; <strong>{{poll.option_one_count}}</strong></li>
+                <li class="list-group-item">{{poll.option_two}} &mdash; <strong>{{poll.option_two_count}}</strong></li>
+                <li class="list-group-item">{{poll.option_three}} &mdash; <strong>{{poll.option_three_count}}</strong></li>
+                <li class="list-group-item">{{poll.option_four}} &mdash; <strong>{{poll.option_four_count}}</strong></li>
+            </ul>
+
+            <div class="panel-footer">
+                Total &mdash; <strong>{{poll.total}}</strong>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-8 col-lg-offset-2">
+        <canvas id="myChart"></canvas>
+		<script>
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'pie',
+			data: {
+				labels: ['{{poll.option_one}}','{{poll.option_two}}','{{poll.option_three}}','{{poll.option_four}}'],
+				datasets: [{
+					label: '# of Votes',
+					data: [{{poll.option_one_count}}, {{poll.option_two_count}}, {{poll.option_three_count}}, '{{poll.option_four_count}}'],
+					backgroundColor: [
+						'rgba(255, 99, 132, 0.2)',
+						'rgba(54, 162, 235, 0.2)',
+						'rgba(255, 206, 86, 0.2)',
+						'rgba(75, 192, 192, 0.2)',
+						'rgba(153, 102, 255, 0.2)',
+						'rgba(255, 159, 64, 0.2)'
+					],
+					borderColor: [
+						'rgba(255, 99, 132, 1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(153, 102, 255, 1)',
+						'rgba(255, 159, 64, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				
+			}
+		});
+		</script>
+        <a class="btn btn-primary" href="/polls">Return to Polls</a>
+    </div>
+</div>
+{% endblock %}

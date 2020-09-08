@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container" style="width:600px">
+    <h1>Create Post</h1>
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="Submit" value="Submit">
+    </form>
+    {% for message in messages %}
+        <p style="color:red">{{message}}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

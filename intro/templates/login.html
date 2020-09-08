@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Login - Cheung Ho Yin
+{% endblock title %}
+{% block content %}
+
+<div class="container" style="width:600px">
+    <h1>Login Authentication</h1>
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{request.GET.next}}">
+        {% endif %}
+        <input type="Submit" value="Submit">
+    </form>
+    {% for message in messages %}
+        <p style="color:red">{{message}}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

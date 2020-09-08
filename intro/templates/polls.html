@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Poll Page -- Cheung Ho Yin{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Available Polls / アンケート</h3>
+                <span>Login is NOT required</span>
+            </div>
+
+            <ul class="list-group">
+                {% for poll in polls %}
+                <li class="list-group-item">
+                    <strong>{{ poll.question }}</strong>
+                    <span class="float-right">
+                        <a href="/vote/{{poll.id}}" class="btn btn-info btn-xs">Vote</a>
+                        <a href="/results/{{poll.id}}" class="btn btn-secondary btn-xs">View Results</a>
+                    </span>
+                </li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

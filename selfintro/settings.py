@@ -25,7 +25,7 @@ SECRET_KEY = 'ih9j$kx7(efhp2z7=vd8q9skes6w^h@(#6mq6bdbck1kc!1-c$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['chy-selfintro.herokuapp.com']
+ALLOWED_HOSTS = ['chy-selfintro.herokuapp.com', '127.0.0.1']
 
 
 # Application definition

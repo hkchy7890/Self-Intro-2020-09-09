@@ -53,36 +53,45 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">ホーム <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
+            <a class="nav-link" href="/about">自己紹介</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/whyit">Why IT</a>
+            <a class="nav-link" href="/whyit">なぜITを</a>
           </li>
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          ミニプロジェクト
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="https://tokumei-lib.herokuapp.com/"　target="_blank">図書検索ページ</a>
+          <a class="dropdown-item" href="https://koken-kakeibo.herokuapp.com/" target="_blank">家計簿</a>
+        </div>
+      </li>
           <li class="nav-item">
-            <a class="nav-link" href="/posts">Blog</a>
+            <a class="nav-link" href="/posts">ブログ</a>
           </li>
             <li class="nav-item">
-            <a class="nav-link" href="/polls">Poll</a>
+            <a class="nav-link" href="/polls">アンケート</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact</a>
+            <a class="nav-link" href="/contact">連絡</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
 
           {% if user.is_authenticated %}
-          <small style="color:white"><i>You are logged in as</i> <b>{{request.user.username}}</b></small>
+          <small style="color:white;">歓迎！<b>{{request.user.username}}</b>さん </small>
             {% if user.is_superuser %}
 
             <a class="nav-link" href="/admin">Admin</a>
             {% endif %}
-            <a class="btn btn-warning my-2 my-sm-0" href="/logout">Logout</a>
+            <a class="btn btn-warning my-2 my-sm-0" href="/logout">ログアウト</a>
           {% else %}
-            <a class="btn btn-info my-2 my-sm-0" href="/login">Login</a>
+            <a class="btn btn-info my-2 my-sm-0" href="/login">ログイン</a>
           {% endif %}
         </form>
       </div>

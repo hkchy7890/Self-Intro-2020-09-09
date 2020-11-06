@@ -5,7 +5,9 @@ class EnquiryForm(forms.ModelForm):
     class Meta:
         model = Enquiry
         labels = {
-            'content':'Comment'
+            'name': '**名前**',
+            'email':'Eメール',
+            'content':'コメント'
         }
         fields = '__all__'
 
